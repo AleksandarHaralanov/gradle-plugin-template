@@ -1,0 +1,8 @@
+# To learn about plugin YAML attributes, visit: http://wiki.bukkit.org/Plugin_YAML or https://www.spigotmc.org/wiki/plugin-yml/
+# To learn about semantic versioning, visit: https://semver.org
+main: org.example.Main
+version: 1.0.0
+name: INSERT_NAME
+author: INSERT_AUTHOR
+website: INSERT_WEBSITE
+description: INSERT_DESCRIPTION

@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation files("libs/poseidon.jar")
+}
+
+def ymlFile = file('src/main/resources/plugin.yml')
+
+if (!ymlFile.exists()) {
+    throw new GradleException("The 'plugin.yml' file does not exist in 'src/main/resources'!")
+}
+
+def pluginVersion
+def pluginName
+
+def ymlText = ymlFile.text
+def mainMatcher = (ymlText =~ /main:\s*(\S+)/)
+def versionMatcher = (ymlText =~ /version:\s*(\S+)/)
+def nameMatcher = (ymlText =~ /name:\s*(\S+)/)
+
+if (!mainMatcher.find()) {
+    throw new GradleException("The 'main' attribute wasn't found in the 'plugin.yml' file!")
+}
+
+if (versionMatcher.find()) {
+    pluginVersion = versionMatcher.group(1)
+} else {
+    throw new GradleException("The 'version' attribute wasn't found in the 'plugin.yml' file!")
+}
+
+if (nameMatcher.find()) {
+    pluginName = nameMatcher.group(1)
+} else {
+    throw new GradleException("The 'name' attribute wasn't found in the 'plugin.yml' file!")
+}
+
+jar {
+    archiveVersion.set(pluginVersion.toString())
+    archiveBaseName.set(pluginName.toString())
+}
