@@ -1,3 +1,5 @@
+import java.util.regex.Matcher
+
 plugins {
     id 'java'
 }
@@ -10,19 +12,19 @@ dependencies {
     implementation files("libs/poseidon.jar")
 }
 
-def ymlFile = file('src/main/resources/plugin.yml')
+File ymlFile = file('src/main/resources/plugin.yml') as File
 
 if (!ymlFile.exists()) {
     throw new GradleException("The 'plugin.yml' file does not exist in 'src/main/resources'!")
 }
 
-def pluginVersion
-def pluginName
+String pluginVersion
+String pluginName
+String ymlText = ymlFile.text
 
-def ymlText = ymlFile.text
-def mainMatcher = (ymlText =~ /main:\s*(\S+)/)
-def versionMatcher = (ymlText =~ /version:\s*(\S+)/)
-def nameMatcher = (ymlText =~ /name:\s*(\S+)/)
+Matcher mainMatcher = (ymlText =~ /main:\s*(\S+)/)
+Matcher versionMatcher = (ymlText =~ /version:\s*(\S+)/)
+Matcher nameMatcher = (ymlText =~ /name:\s*(\S+)/)
 
 if (!mainMatcher.find()) {
     throw new GradleException("The 'main' attribute wasn't found in the 'plugin.yml' file!")
@@ -41,6 +43,13 @@ if (nameMatcher.find()) {
 }
 
 jar {
-    archiveVersion.set(pluginVersion.toString())
-    archiveBaseName.set(pluginName.toString())
+    manifest {
+        attributes(
+                'Implementation-Title': pluginName,
+                'Implementation-Version': pluginVersion
+        )
+    }
+
+    archiveVersion.set(pluginVersion)
+    archiveBaseName.set(pluginName)
 }
