@@ -1,4 +1,4 @@
-package org.example.utilities;
+package org.example.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import static org.bukkit.Bukkit.getLogger;
+import static org.bukkit.Bukkit.getServer;
 
 public class UpdateUtil {
 
@@ -37,9 +37,9 @@ public class UpdateUtil {
             final int responseCode = connection.getResponseCode();
             if (responseCode != 200) {
                 if (responseCode == 403 || responseCode == 429) {
-                    getLogger().warning(String.format("[%s] Rate limited, can't check for a new plugin version. This should resolve itself within an hour.", pluginName));
+                    getServer().getLogger().warning(String.format("[%s] Rate limited, can't check for a new plugin version. This should resolve itself within an hour.", pluginName));
                 } else {
-                    getLogger().warning(String.format("[%s] Unexpected response code: %s. Unable to check for a new plugin version.", pluginName, responseCode));
+                    getServer().getLogger().warning(String.format("[%s] Unexpected response code: %s. Unable to check for a new plugin version.", pluginName, responseCode));
                 }
                 return;
             }
@@ -57,7 +57,7 @@ public class UpdateUtil {
             final String formattedCurrentVersion = "v" + pluginVersion;
             compareVersions(pluginName, formattedCurrentVersion, latestVersion, githubApiUrl);
         } catch (final IOException | URISyntaxException e) {
-            getLogger().severe(String.format("[%s] Exception occurred while checking for a new version: %s", pluginName, e.getMessage()));
+            getServer().getLogger().severe(String.format("[%s] Exception occurred while checking for a new version: %s", pluginName, e.getMessage()));
         } finally {
             if (connection != null) {
                 connection.disconnect();
@@ -83,16 +83,16 @@ public class UpdateUtil {
 
     private static void compareVersions(final String pluginName, final String pluginVersion, final String latestVersion, final String githubApiUrl) {
         if (latestVersion == null) {
-            getLogger().warning(String.format("[%s] Could not determine the latest version.", pluginName));
+            getServer().getLogger().warning(String.format("[%s] Could not determine the latest version.", pluginName));
             return;
         }
 
         if (!pluginVersion.equalsIgnoreCase(latestVersion)) {
             final String downloadLink = githubApiUrl.replace("api.github.com/repos", "github.com");
-            getLogger().info(String.format("[%s] New %s available, you are running an OUTDATED %s!", pluginName, latestVersion, pluginVersion));
-            getLogger().info(String.format("[%s] Download the latest version from: %s", pluginName, downloadLink));
+            getServer().getLogger().info(String.format("[%s] New %s available, you are running an OUTDATED %s!", pluginName, latestVersion, pluginVersion));
+            getServer().getLogger().info(String.format("[%s] Download the latest version from: %s", pluginName, downloadLink));
         } else {
-            getLogger().info(String.format("[%s] You are running the latest version.", pluginName));
+            getServer().getLogger().info(String.format("[%s] You are running the latest version.", pluginName));
         }
     }
 }
