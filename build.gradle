@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-    implementation files("libs/poseidon.jar")
+    implementation files("libs/project-poseidon-1.1.8.jar")
 }
 
 File ymlFile = file('src/main/resources/plugin.yml') as File
