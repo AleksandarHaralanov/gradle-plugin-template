@@ -34,12 +34,20 @@ public class AboutUtil {
                     .collect(Collectors.joining("&7, &e"));
         }
 
+        boolean unstable = (version.contains("alpha") || version.contains("beta") || version.contains("rc"));
+
         if (sender instanceof Player) {
+            if (unstable) {
+                sender.sendMessage(ColorUtil.translate(String.format("&cThis version of %s is not a stable release and likely contains bugs and other types of issues. Update to a stable release if available.", name)));
+            }
             sender.sendMessage(ColorUtil.translate(String.format("&e%s &7version &e%s", name, version)));
             sender.sendMessage(ColorUtil.translate(String.format("&7%s", description)));
             sender.sendMessage(ColorUtil.translate(String.format("&7Website: &e%s", website)));
             sender.sendMessage(ColorUtil.translate(String.format("&7Author(s): &e%s", authors)));
         } else {
+            if (unstable) {
+                getServer().getLogger().warning(String.format("This version of %s is not a stable release and likely contains bugs and other types of issues. Update to a stable release if available.", name));
+            }
             getServer().getLogger().info(String.format("%s version %s", name, version));
             getServer().getLogger().info(String.format("%s", description));
             getServer().getLogger().info(String.format("Website: %s", website));
