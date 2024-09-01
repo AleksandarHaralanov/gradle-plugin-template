@@ -7,7 +7,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.bukkit.Bukkit.getServer;
+import static org.example.util.LoggerUtil.logInfo;
+import static org.example.util.LoggerUtil.logWarning;
 
 /**
  * Utility class for displaying plugin information to the command sender.
@@ -119,10 +120,10 @@ public class AboutUtil {
      */
     private static void sendConsoleInfo(String name, String version, String description, String website, String authors, boolean experimental) {
         if (experimental) {
-            getServer().getLogger().warning("Running an experimental version.");
-            getServer().getLogger().warning("May contain bugs or other types of issues.");
+            logWarning("Running an experimental version.");
+            logWarning("May contain bugs or other types of issues.");
         }
-        getServer().getLogger().info(String.format("%s version %s", name, version));
+        logInfo(String.format("%s version %s", name, version));
         outputMessage(description);
         outputMessage("Website: ", website);
         outputMessage("Author(s): ", authors != null ? authors.replace("&e", "").replace("&7", "") : null);
@@ -150,7 +151,7 @@ public class AboutUtil {
      */
     private static void outputMessage(String message) {
         if (message != null) {
-            getServer().getLogger().info(message);
+            logInfo(message);
         }
     }
 
@@ -162,7 +163,7 @@ public class AboutUtil {
      */
     private static void outputMessage(String prefix, String message) {
         if (message != null) {
-            getServer().getLogger().info(prefix + message);
+            logInfo(prefix + message);
         }
     }
 }

@@ -4,11 +4,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
-    private static Main instance;
+    private static Main plugin;
 
     @Override
     public void onEnable() {
-        instance = this;
+        plugin = this;
 
         // Initialization logic (e.g., register listeners, commands)
 
@@ -22,7 +22,7 @@ public class Main extends JavaPlugin {
         getServer().getLogger().info(String.format("[%s] v%s Disabled.", getDescription().getName(), getDescription().getName()));
     }
 
-    public static Main getInstance() {
-        return instance;
+    public static Main getPlugin() {
+        return plugin;
     }
 }
