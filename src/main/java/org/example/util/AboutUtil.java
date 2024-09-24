@@ -36,12 +36,12 @@ public class AboutUtil {
         String description = plugin.getDescription().getDescription();
         String authors = formatAuthors(plugin.getDescription().getAuthors());
 
-        boolean experimental = isExperimentalVersion(version);
+        boolean isExperimental = isExperimentalVersion(version);
 
         if (sender instanceof Player) {
-            sendPlayerInfo((Player) sender, name, version, description, website, authors, experimental);
+            sendPlayerInfo((Player) sender, name, version, description, website, authors, isExperimental);
         } else {
-            sendConsoleInfo(name, version, description, website, authors, experimental);
+            sendConsoleInfo(name, version, description, website, authors, isExperimental);
         }
     }
 

@@ -25,7 +25,7 @@ The [util](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/ma
 - **Usage**: Can be used in commands to inform players or server administrators about the plugin details.
 - **Features**:
    - Differentiates between players and console senders.
-   - Warns when the plugin is running an experimental version (e.g., alpha, beta, snapshot).
+   - Warns when the plugin is running an experimental version (e.g., alpha, beta, snapshot, release candidate).
 
 #### [AccessUtil](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/util/AccessUtil.java)
 - **Purpose**: Manages access control for commands and checks user permissions.
