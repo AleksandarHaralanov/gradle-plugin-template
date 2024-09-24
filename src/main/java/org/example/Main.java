@@ -13,6 +13,8 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         pdf = getDescription();
 
+        // Startup logic (e.g., initialize data, register listeners)
+
         logInfo(String.format("[%s] v%s Enabled.", pdf.getName(), pdf.getVersion()));
     }
 
