@@ -25,7 +25,7 @@ While the project may be compatible with other Integrated Development Environmen
 
 1. Open your terminal and run the following command:
    ```bash
-   git clone https://github.com/AleksandarHaralanov/gradle-plugin-template.git <your-project-name>
+   git clone https://github.com/AleksandarHaralanov/gradle-plugin-template.git <project-name>
    ```
 
 </details>
