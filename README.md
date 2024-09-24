@@ -4,6 +4,11 @@ A gradle template to use as a base for Minecraft b1.7.3 plugin development.
 ## Prerequisites
 - **JDK 8 Required**: This project is built upon JDK 8. Ensure that your development environment is set up with JDK 8 or a compatible version.
 
+## Usage
+While the project may be compatible with other Integrated Development Environments (IDEs), it is highly recommended to use IntelliJ IDEA by JetBrains for optimal performance.
+1. Clone the repository by utilizing the Version Control System (VCS) and entering this GitHub repository's link when initiating a new project.
+2. After cloning, update the `src/main/resources/plugin.yml` with your specific details.
+
 ## Features
 1. [build.gradle](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/build.gradle) that names the plugin's compiled `.jar` file using the plugin's name and version directly from the `plugin.yml` file.
 2. [Main](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/Main.java) class includes the following:
@@ -53,8 +58,3 @@ The [util](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/ma
 - **Features**:
    - Works with GitHub repositories.
    - Logs update information and provides a download link for the latest version.
-
-## Usage
-While the project may be compatible with other Integrated Development Environments (IDEs), it is highly recommended to use IntelliJ IDEA by JetBrains for optimal performance.
-1. Clone the repository by utilizing the Version Control System (VCS) and entering this GitHub repository's link when initiating a new project.
-2. After cloning, update the `src/main/resources/plugin.yml` with your specific details.
