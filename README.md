@@ -3,8 +3,33 @@ A gradle template to use as a base for Minecraft b1.7.3 plugin development.
 
 ## Usage
 While the project may be compatible with other Integrated Development Environments (IDEs), it is highly recommended to use IntelliJ IDEA by JetBrains for optimal performance.
-1. Clone the repository by utilizing the Version Control System (VCS) and entering this GitHub repository's link when initiating a new project.
-2. After cloning, update the `src/main/resources/plugin.yml` with your specific details.
+
+### How to Clone
+<details>
+    <summary><b>Clone via VCS</b></summary>
+
+1. Open IntelliJ IDEA.
+2. Go to `File > New > Project from Version Control`.
+   - If you're on the dashboard home screen of the IDE, click `CLONE FROM VCS` on the top-right button.
+3. In the `URL` field, paste the repository link:
+   ```
+   https://github.com/AleksandarHaralanov/gradle-plugin-template
+   ```
+4. Click `Clone` to download the project.
+
+</details>
+
+<details>
+    <summary><b>Clone via Git</b></summary>
+
+1. Open your terminal and run the following command:
+   ```bash
+   git clone https://github.com/AleksandarHaralanov/gradle-plugin-template.git
+   ```
+
+</details>
+
+#### After cloning, update the `src/main/resources/plugin.yml` with your specific details.
 
 ## Prerequisites
 - **JDK 8 Required**: This project is built upon JDK 8. Ensure that your development environment is set up with JDK 8 or a compatible version.
