@@ -4,7 +4,7 @@ A gradle template to use as a base for Minecraft b1.7.3 plugin development.
 ## Usage
 While the project may be compatible with other Integrated Development Environments (IDEs), it is highly recommended to use IntelliJ IDEA by JetBrains for optimal performance.
 
-### How to Clone
+### Cloning Gradle Plugin Template
 <details>
     <summary><b>Clone via VCS</b></summary>
 
@@ -30,7 +30,8 @@ While the project may be compatible with other Integrated Development Environmen
 
 </details>
 
-#### After cloning, update the `src/main/resources/plugin.yml` with your specific details.
+### Notice
+After cloning, update the `src/main/resources/plugin.yml` with your specific details.
 
 ## Prerequisites
 - **JDK 8 Required**: This project is built upon JDK 8. Ensure that your development environment is set up with JDK 8 or a compatible version.
