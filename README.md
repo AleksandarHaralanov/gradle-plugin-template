@@ -4,9 +4,9 @@ A gradle template to use as a base for Minecraft b1.7.3 plugin development.
 ## Usage
 While the project may be compatible with other Integrated Development Environments (IDEs), it is highly recommended to use IntelliJ IDEA by JetBrains for optimal performance.
 
-### Cloning Gradle Plugin Template
+### Cloning the template
 <details>
-    <summary><b>Clone via VCS</b></summary>
+    <summary><b>Via VCS</b></summary>
 
 1. Open IntelliJ IDEA.
 2. Go to `File > New > Project from Version Control`.
@@ -21,7 +21,7 @@ While the project may be compatible with other Integrated Development Environmen
 </details>
 
 <details>
-    <summary><b>Clone via Git</b></summary>
+    <summary><b>Via Git</b></summary>
 
 1. Open your terminal and run the following command:
    ```bash
