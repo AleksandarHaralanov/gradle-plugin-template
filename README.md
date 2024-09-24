@@ -11,11 +11,11 @@ While the project may be compatible with other Integrated Development Environmen
 
 ## Features
 ### Convenience
-1. [build.gradle](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/build.gradle) that names the plugin's compiled `.jar` file using the plugin's name and version directly from the `plugin.yml` file.
-2. [Main](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/Main.java) class includes the following:
+- [build.gradle](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/build.gradle) that names the plugin's compiled `.jar` file using the plugin's name and version directly from the `plugin.yml` file.
+- [Main](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/Main.java) class includes the following:
    - The `onEnable` and `onDisable` methods for the plugin's functionality.
    - Loggers that utilize the plugin's name and version for when the plugin is enabled and disabled.
-3. The [api](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/api) package contains different APIs for you to utilize.
+- The [api](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/api) package contains different APIs for you to utilize.
 
 ### Utility Classes
 The [util](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/util) package contains utility classes to assist with common tasks in plugin development. Additionally, they come with well-structured javadocs. Here are the main utility classes included:
