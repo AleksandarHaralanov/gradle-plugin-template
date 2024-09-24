@@ -15,7 +15,8 @@ While the project may be compatible with other Integrated Development Environmen
    ```
    https://github.com/AleksandarHaralanov/gradle-plugin-template
    ```
-4. Click `Clone` to download the project.
+4. Rename your project to have your desired plugin name.
+5. Click `Clone` to download the project.
 
 </details>
 
@@ -24,7 +25,7 @@ While the project may be compatible with other Integrated Development Environmen
 
 1. Open your terminal and run the following command:
    ```bash
-   git clone https://github.com/AleksandarHaralanov/gradle-plugin-template.git
+   git clone https://github.com/AleksandarHaralanov/gradle-plugin-template.git <your-project-name>
    ```
 
 </details>
