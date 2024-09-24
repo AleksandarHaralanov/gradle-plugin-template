@@ -18,7 +18,7 @@ While the project may be compatible with other Integrated Development Environmen
    - By default, the project is set up to use [Project Poseidon](https://github.com/RhysB/Project-Poseidon) as its API, but you can change it to something else if you prefer by using the storage. Check the `README.md` file inside for instructions on how to do that.
 
 ## Utility Classes
-The [util](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/util) package contains utility classes to assist with common tasks in plugin development. Here are the main utility classes included:
+The [util](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/util) package contains utility classes to assist with common tasks in plugin development. Additionally, they come with well-structured javadocs. Here are the main utility classes included:
 
 ### [AboutUtil](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/util/AboutUtil.java)
 - **Purpose**: Displays detailed plugin information to the command sender, including the plugin's name, version, description, website, and authors.
