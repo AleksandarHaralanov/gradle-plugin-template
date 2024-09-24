@@ -1,5 +1,9 @@
 package org.example.util;
 
+import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.java.JavaPlugin;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -29,12 +33,12 @@ public class UpdateUtil {
      * <b>Warning:</b> This method only works with GitHub repositories. Ensure that the GitHub API URL points to
      * the latest release information of your repository.
      *
-     * @param pluginName    the name of the plugin
-     * @param pluginVersion the current version of the plugin
+     * @param plugin        the plugin instance using this update check utility
      * @param githubApiUrl  the GitHub API URL to query for the latest release information; should be in the format
      *                      {@code https://api.github.com/repos/USER/REPO/releases/latest}
      */
-    public static void checkForUpdates(String pluginName, String pluginVersion, String githubApiUrl) {
+    public static void checkForUpdates(JavaPlugin plugin, String githubApiUrl) {
+        PluginDescriptionFile pdf = plugin.getDescription();
         HttpURLConnection connection = null;
         try {
             URI uri = new URI(githubApiUrl);
@@ -44,7 +48,7 @@ public class UpdateUtil {
 
             int responseCode = connection.getResponseCode();
             if (responseCode != 200) {
-                handleResponseError(pluginName, responseCode);
+                handleResponseError(plugin.getDescription().getName(), responseCode);
                 return;
             }
 
@@ -58,10 +62,10 @@ public class UpdateUtil {
 
             String responseBody = content.toString();
             String latestVersion = getLatestVersion(responseBody);
-            String formattedCurrentVersion = "v" + pluginVersion;
-            compareVersions(pluginName, formattedCurrentVersion, latestVersion, githubApiUrl);
+            String formattedCurrentVersion = "v" + pdf.getVersion();
+            compareVersions(pdf.getName(), formattedCurrentVersion, latestVersion, githubApiUrl);
         } catch (IOException | URISyntaxException e) {
-            logSevere(String.format("[%s] Exception occurred while checking for a new version: %s", pluginName, e.getMessage()));
+            logSevere(String.format("[%s] Exception occurred while checking for a new version: %s", pdf.getName(), e.getMessage()));
         } finally {
             if (connection != null) {
                 connection.disconnect();
