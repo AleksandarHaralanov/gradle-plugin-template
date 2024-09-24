@@ -52,6 +52,7 @@ The [utils](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/m
    - Works with GitHub repositories.
    - Logs update information and provides a download link for the latest version.
 
+## Usage
 While the project may be compatible with other Integrated Development Environments (IDEs), it is highly recommended to use IntelliJ IDEA by JetBrains for optimal performance.
 1. Clone the repository by utilizing the Version Control System (VCS) and entering this GitHub repository's link when initiating a new project.
 2. After cloning, update the `src/main/resources/plugin.yml` with your specific details.
