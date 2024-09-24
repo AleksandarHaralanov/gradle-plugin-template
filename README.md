@@ -6,7 +6,6 @@ A gradle template to use as a base for Minecraft b1.7.3 plugin development.
 2. [Main](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/Main.java) class includes the following:
    - The `onEnable` and `onDisable` methods for the plugin's functionality.
    - Loggers that utilize the plugin's name and version for when the plugin is enabled and disabled.
-   - Method to get the plugin's instance for use in other classes.
 3. The [storage](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/storage) package contains different APIs for you to utilize.
    - By default, the project is set up to use [Project Poseidon](https://github.com/RhysB/Project-Poseidon) as its API, but you can change it to something else if you prefer by using the storage. Check the `README.md` file inside for instructions on how to do that.
 
