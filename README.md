@@ -14,8 +14,7 @@ While the project may be compatible with other Integrated Development Environmen
 2. [Main](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/Main.java) class includes the following:
    - The `onEnable` and `onDisable` methods for the plugin's functionality.
    - Loggers that utilize the plugin's name and version for when the plugin is enabled and disabled.
-3. The [storage](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/storage) package contains different APIs for you to utilize.
-   - By default, the project is set up to use [Project Poseidon](https://github.com/RhysB/Project-Poseidon) as its API, but you can change it to something else if you prefer by using the storage. Check the `README.md` file inside for instructions on how to do that.
+3. The [api](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/api) package contains different APIs for you to utilize.
 
 ## Utility Classes
 The [util](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/util) package contains utility classes to assist with common tasks in plugin development. Additionally, they come with well-structured javadocs. Here are the main utility classes included:
