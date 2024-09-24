@@ -12,9 +12,9 @@ While the project may be compatible with other Integrated Development Environmen
 2. Go to `File > New > Project from Version Control`.
    - If you're on the dashboard home screen of the IDE, click `CLONE FROM VCS` on the top-right button.
 3. In the `URL` field, paste the repository link:
-   ```
-   https://github.com/AleksandarHaralanov/gradle-plugin-template
-   ```
+```
+https://github.com/AleksandarHaralanov/gradle-plugin-template
+```
 4. Rename your project to have your desired plugin name.
 5. Click `Clone` to download the project.
 
@@ -24,9 +24,9 @@ While the project may be compatible with other Integrated Development Environmen
     <summary><b>Via Git</b></summary>
 
 1. Open your terminal and run the following command:
-   ```bash
-   git clone https://github.com/AleksandarHaralanov/gradle-plugin-template.git <project-name>
-   ```
+```bash
+git clone https://github.com/AleksandarHaralanov/gradle-plugin-template.git <project-name>
+```
 
 </details>
 
