@@ -10,6 +10,7 @@ While the project may be compatible with other Integrated Development Environmen
 - **JDK 8 Required**: This project is built upon JDK 8. Ensure that your development environment is set up with JDK 8 or a compatible version.
 
 ## Features
+### Convenience
 1. [build.gradle](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/build.gradle) that names the plugin's compiled `.jar` file using the plugin's name and version directly from the `plugin.yml` file.
 2. [Main](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/Main.java) class includes the following:
    - The `onEnable` and `onDisable` methods for the plugin's functionality.
