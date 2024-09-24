@@ -26,6 +26,13 @@ The [util](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/ma
    - Differentiates between players and console senders.
    - Warns when the plugin is running an experimental version (e.g., alpha, beta, snapshot).
 
+#### [AccessUtil](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/util/AccessUtil.java)
+- **Purpose**: Manages access control for commands and checks user permissions.
+- **Usage**: Ensures only players with the correct permissions can execute commands, and restricts certain commands to in-game use only.
+- **Features**:
+    - Custom permission checks.
+    - Logs and informs users if they lack permission.
+
 #### [ColorUtil](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/util/ColorUtil.java)
 - **Purpose**: Translates text by replacing `&` color codes with Minecraft's color codes (`§`).
 - **Usage**: Commonly used to colorize in-game messages to players.
@@ -36,13 +43,6 @@ The [util](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/ma
 - **Features**:
    - Extends Bukkit's Configuration class.
    - Allows management of custom configuration files.
-
-#### [AccessUtil](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/util/AccessUtil.java)
-- **Purpose**: Manages access control for commands and checks user permissions.
-- **Usage**: Ensures only players with the correct permissions can execute commands, and restricts certain commands to in-game use only.
-- **Features**:
-   - Custom permission checks.
-   - Logs and informs users if they lack permission.
 
 #### [LoggerUtil](https://github.com/AleksandarHaralanov/Gradle-Plugin-Template/blob/master/src/main/java/org/example/util/LoggerUtil.java)
 - **Purpose**: Provides simplified logging functionality, including logging to both the server console and a custom log file.
