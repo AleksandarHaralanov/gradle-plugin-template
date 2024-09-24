@@ -70,7 +70,7 @@ public class ConfigUtil extends Configuration {
         try {
             Files.createDirectories(configFile.getParentFile().toPath());
         } catch (IOException e) {
-            logSevere(String.format("[%s] Failed to generate default config directory: %s", pluginName, e.getMessage()));
+            logSevere(String.format("[%s] Failed to create default config directory: %s", pluginName, e.getMessage()));
         }
     }
 
@@ -93,9 +93,9 @@ public class ConfigUtil extends Configuration {
             }
 
             Files.copy(input, configFile.toPath());
-            logInfo(String.format("[%s] Default config '%s' generated successfully.", pluginName, configFile.getName()));
+            logInfo(String.format("[%s] Default config '%s' created successfully.", pluginName, configFile.getName()));
         } catch (IOException e) {
-            logSevere(String.format("[%s] Failed to generate default config '%s': %s", pluginName, configFile.getName(), e.getMessage()));
+            logSevere(String.format("[%s] Failed to create default config '%s': %s", pluginName, configFile.getName(), e.getMessage()));
         }
     }
 
@@ -125,14 +125,5 @@ public class ConfigUtil extends Configuration {
         } catch (Exception e) {
             logSevere(String.format("[%s] Failed to save config '%s': %s", pluginName, configFile.getName(), e.getMessage()));
         }
-    }
-
-    /**
-     * Returns the configuration file managed by this utility.
-     *
-     * @return the configuration file
-     */
-    public File getConfig() {
-        return configFile;
     }
 }
