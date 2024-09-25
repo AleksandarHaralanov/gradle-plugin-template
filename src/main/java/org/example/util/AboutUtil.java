@@ -5,19 +5,22 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import static org.example.util.LoggerUtil.logInfo;
-import static org.example.util.LoggerUtil.logWarning;
+import static org.bukkit.Bukkit.getServer;
+import static org.example.util.ColorUtil.translate;
 
 /**
  * Utility class for displaying plugin information to the command sender.
  * <p>
- * This class provides a method to display detailed information about a plugin, including its name, version,
+ * This class provides methods to display detailed information about a plugin, including its name, version,
  * description, website, and author(s). The information is formatted and sent to the command sender, which can be
  * either a player or the server console.
  */
 public class AboutUtil {
+
+    private static final Logger logger = getServer().getLogger();
 
     /**
      * Displays detailed information about the specified plugin to the command sender.
@@ -52,7 +55,6 @@ public class AboutUtil {
      * for coloring in the player chat.
      *
      * @param authorsList the list of authors to format
-     *
      * @return a formatted string of authors, or {@code null} if the list is empty or {@code null}
      */
     private static String formatAuthors(List<String> authorsList) {
@@ -70,7 +72,6 @@ public class AboutUtil {
      * A version is considered experimental if it contains "snapshot", "alpha", "beta", or "rc".
      *
      * @param version the version string to check
-     *
      * @return {@code true} if the version is experimental, otherwise {@code false}
      */
     private static boolean isExperimentalVersion(String version) {
@@ -96,10 +97,10 @@ public class AboutUtil {
      */
     private static void sendPlayerInfo(Player player, String name, String version, String description, String website, String authors, boolean experimental) {
         if (experimental) {
-            player.sendMessage(ColorUtil.translate("&cRunning an experimental version."));
-            player.sendMessage(ColorUtil.translate("&cMay contain bugs or other types of issues."));
+            player.sendMessage(translate("&cRunning an experimental version."));
+            player.sendMessage(translate("&cMay contain bugs or other types of issues."));
         }
-        player.sendMessage(ColorUtil.translate(String.format("&e%s &7version &e%s", name, version)));
+        player.sendMessage(translate(String.format("&e%s &7version &e%s", name, version)));
         outputMessage(player, "&7", description);
         outputMessage(player, "&7Website: &e", website);
         outputMessage(player, "&7Author(s): &e", authors);
@@ -120,10 +121,10 @@ public class AboutUtil {
      */
     private static void sendConsoleInfo(String name, String version, String description, String website, String authors, boolean experimental) {
         if (experimental) {
-            logWarning("Running an experimental version.");
-            logWarning("May contain bugs or other types of issues.");
+            logger.warning("Running an experimental version.");
+            logger.warning("May contain bugs or other types of issues.");
         }
-        logInfo(String.format("%s version %s", name, version));
+        logger.info(String.format("%s version %s", name, version));
         outputMessage(description);
         outputMessage("Website: ", website);
         outputMessage("Author(s): ", authors != null ? authors.replace("&e", "").replace("&7", "") : null);
@@ -140,7 +141,7 @@ public class AboutUtil {
      */
     private static void outputMessage(Player player, String prefix, String message) {
         if (message != null) {
-            player.sendMessage(ColorUtil.translate(prefix + message));
+            player.sendMessage(translate(prefix + message));
         }
     }
 
@@ -151,7 +152,7 @@ public class AboutUtil {
      */
     private static void outputMessage(String message) {
         if (message != null) {
-            logInfo(message);
+            logger.info(message);
         }
     }
 
@@ -163,7 +164,7 @@ public class AboutUtil {
      */
     private static void outputMessage(String prefix, String message) {
         if (message != null) {
-            logInfo(prefix + message);
+            logger.info(prefix + message);
         }
     }
 }
