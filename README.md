@@ -1,5 +1,5 @@
 # Gradle Plugin Template
-A gradle template to use as a base for Minecraft b1.7.3 plugin development, includes utility classes for common plugin tasks.
+A gradle template to use as a base for Minecraft b1.7.3 plugin development, includes utility classes for common plugin tasks and convenience.
 
 ## Usage
 While the project may be compatible with other Integrated Development Environments (IDEs), it is highly recommended to use IntelliJ IDEA by JetBrains for optimal performance.
